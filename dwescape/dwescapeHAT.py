@@ -45,7 +45,7 @@ class dw_PWM:
                 # switch off
                 self.off()
 
-        def off():
+        def off(self):
                 self.MC.setPin(self.pin, 0)
 
         def write(self, angle):
@@ -72,8 +72,8 @@ class dw_PWMCONTROL:
                 self._pwm.setPWMFreq(self._frequency)
                 # Just gonna default to high for now
 
-                self.esc = [ dw_PWM(self, m, freq) for m in range(6) ]
-                self.servo = [ dw_PWM(self, m, freq) for m in range(6, 12) ]
+                self.servo = [ dw_PWM(self, m, freq) for m in range(6) ]
+                self.esc = [ dw_PWM(self, m, freq) for m in range(6, 12) ]
 
         def setPin(self, pin, value):
                 if (pin < 0) or (pin > 15):
@@ -98,5 +98,5 @@ class dw_PWMCONTROL:
         def allOff(self):
                 for y in range(6):
                         self.esc[y].off()
-                for y in range(6, 12):
+                for y in range(6):
                         self.servo[y].off()
