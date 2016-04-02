@@ -21,6 +21,9 @@ class dw_PWM:
                 self.servo_min = math.trunc( ( _SERVO_MIN_MS * 4096 ) / (1000.0 / self.freq ) - 1 )
                 self.servo_max = math.trunc( ( _SERVO_MAX_MS * 4096 ) / (1000.0 / self.freq ) - 1 )
 
+                self.servo_zero = math.trunc( ( self.servo_min + self.servo_max ) / 2 ) # halfway = 0 degrees
+
+
                 if (num == 0):
                         self.pin = 9
                 elif (num == 1):
@@ -54,8 +57,10 @@ class dw_PWM:
         def off(self):
                 self.MC.setPin(self.pin, 0)
 
-        def write(self, angle):
-                self.MC.setPin(self.pin, 0)
+        def setAngle(self, angle):
+                pulse = self.servo_zero + ( (self.servo_zero - self.servo_min ) * angle / 80 )
+                print "angle=%s pulse=%s" % (angle, pulse)
+                #self.setPWMmS( pulse )
 
         def setPWM(self, value):
                 if(value > 0):
