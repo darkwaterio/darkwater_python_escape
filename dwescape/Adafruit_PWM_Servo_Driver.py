@@ -56,7 +56,7 @@ class PWM :
     self.i2c.write8(self.__MODE1, mode1)
     time.sleep(0.005)                             # wait for oscillator
 
-  def setPWMFreq(self, freq):
+  def setPWMFreq(self, freq, correctionFactor=1.0):
     "Sets the PWM frequency"
     prescaleval = 25000000.0    # 25MHz
     prescaleval /= 4096.0       # 12-bit
@@ -65,7 +65,7 @@ class PWM :
     if (self.debug):
       print "Setting PWM frequency to %d Hz" % freq
       print "Estimated pre-scale: %d" % prescaleval
-    prescale = math.floor(prescaleval + 0.5)
+    prescale = math.floor(prescaleval * correctionFactor + 0.5)
     if (self.debug):
       print "Final pre-scale: %d" % prescale
 
@@ -83,8 +83,10 @@ class PWM :
 
     prescale = self.i2c.readU8(self.__PRESCALE)
 
-    print "Got pre-scale: %d" % prescale
-    print 25000000.0 / 4096.0 / ( float(prescale) + 1 )
+    if (self.debug):
+      print "Got pre-scale: %d" % prescale
+      print 25000000.0 / 4096.0 / ( float(prescale) + 1 )
+
     return 25000000.0 / 4096.0 / ( float(prescale) + 1 )
     #24576000.f / 4096.f / (data + 1)
 
