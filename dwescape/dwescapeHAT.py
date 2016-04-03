@@ -64,15 +64,15 @@ class dw_PWM:
 
         def setPWM(self, value):
                 if(value > 0):
-                        self.MC._pwm.setPWM(self.pin, 0, value)
+                        self.MC._pwm.setPWM(self.pin, 0, int(value) )
                 if(value == 0):
                         self.off()
 
         def setPWMmS(self, length_ms):
-                self.setPWM( math.round( length_ms * 4096 ) / ( 1000 / self.freq ) )
+                self.setPWM( round( length_ms * 4096 ) / ( 1000 / self.freq ) )
 
         def setPWMuS(self, length_us):
-                self.setPWM( math.round( length_ms * 4096 ) / ( 1000000 / self.freq ) )
+                self.setPWM( round( length_us * 4096 ) / ( 1000000 / self.freq ) )
 
         def run(self, command, speed = 0):
                 if not self.MC:
