@@ -84,11 +84,11 @@ class PWM :
     prescaleval /= float(freq)
     prescaleval -= 1.0
     if (self.debug):
-    print "Setting PWM frequency to %d Hz" % freq
-    print "Estimated pre-scale: %d" % prescaleval
+      print "Setting PWM frequency to %d Hz" % freq
+      print "Estimated pre-scale: %d" % prescaleval
     prescale = math.floor(prescaleval * correctionFactor + 0.5)
     if (self.debug):
-    print "Final pre-scale: %d" % prescale
+      print "Final pre-scale: %d" % prescale
 
     oldmode = self.i2c.readU8(self.__MODE1);
     newmode = (oldmode & 0x7F) | 0x10             # sleep
@@ -105,11 +105,11 @@ class PWM :
     prescaleval /= float(freq)
     prescaleval -= 1.0
     if (self.debug):
-    print "Setting PWM frequency to %d Hz" % freq
-    print "Estimated pre-scale: %d" % prescaleval
+      print "Setting PWM frequency to %d Hz" % freq
+      print "Estimated pre-scale: %d" % prescaleval
     prescale = math.ceil(prescaleval * correctionFactor + 0.5)
     if (self.debug):
-    print "Final pre-scale: %d" % prescale
+      print "Final pre-scale: %d" % prescale
 
     oldmode = self.i2c.readU8(self.__MODE1);
     newmode = (oldmode & 0x7F) | 0x10             # sleep
@@ -121,9 +121,9 @@ class PWM :
 
   def getPWMFreq(self):
     prescale = self.i2c.readU8(self.__PRESCALE)
+    calcfreq = 25000000.0 / 4096.0 / ( float(prescale) + 1 )
     if (self.debug):
       print "Got pre-scale: %d" % prescale
-      calcfreq = 25000000.0 / 4096.0 / ( float(prescale) + 1 )
       print "Calculated Frequency: %d" % calcfreq
 
     return calcfreq
