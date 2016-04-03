@@ -81,12 +81,12 @@ class dw_PWM:
 
 class dw_PWMCONTROL:
 
-        def __init__(self, addr = 0x61, freq = 100):
+        def __init__(self, addr = 0x61, freq = 100, correctionFactor = 1.0):
                 self._i2caddr = addr            # default addr on HAT
                 self._frequency = freq          # default @60Hz PWM freq
                 # self.steppers = [ Adafruit_StepperMotor(self, 1), Adafruit_StepperMotor(self, 2) ]
                 self._pwm =  PWM(addr, debug=False)
-                self._pwm.setPWMFreq(self._frequency)
+                self._pwm.setPWMFreq(self._frequency, correctionFactor)
                 # Just gonna default to high for now
 
                 self.servo = [ dw_PWM(self, m, freq) for m in range(6) ]
