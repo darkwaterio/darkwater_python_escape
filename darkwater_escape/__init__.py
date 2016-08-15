@@ -1,1 +1,1 @@
-from .dw640HAT import dw_DCMotor, dw_MotorCONTROL
+from .darkwater_escape import dw_Motor, dw_Controller
