@@ -74,10 +74,10 @@ time.sleep(1)
 print "Motor 6"
 m6.setMotorSpeed(-255)
 time.sleep(1)
-print "All stop"
-m1.setMotorSpeed(0)
-m2.setMotorSpeed(0)
-m3.setMotorSpeed(0)
-m4.setMotorSpeed(0)
-m5.setMotorSpeed(0)
-m6.setMotorSpeed(0)
+print "All off"
+m1.off()
+m2.off()
+m3.off()
+m4.off()
+m5.off()
+m6.off()
