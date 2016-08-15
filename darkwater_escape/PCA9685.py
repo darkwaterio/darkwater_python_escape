@@ -96,7 +96,7 @@ class PCA9685(object):
         oldmode = self._device.readU8(MODE1);
         newmode = (oldmode & 0x7F) | 0x10    # sleep
         self._device.write8(MODE1, newmode)  # go to sleep
-        self._device.write8(PRESCALE, prescale)
+        self._device.write8(PRESCALE, int(math.floor(prescale)))
         self._device.write8(MODE1, oldmode)
         time.sleep(0.005)
         self._device.write8(MODE1, oldmode | 0x80)
