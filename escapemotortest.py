@@ -9,12 +9,12 @@ m4 = dw.getMotor(4)
 m5 = dw.getMotor(5)
 m6 = dw.getMotor(6)
 
-m1.setMotorSpeed(0)
-m2.setMotorSpeed(0)
-m3.setMotorSpeed(0)
-m4.setMotorSpeed(0)
-m5.setMotorSpeed(0)
-m6.setMotorSpeed(0)
+m1.off()
+m2.off()
+m3.off()
+m4.off()
+m5.off()
+m6.off()
 time.sleep(1)
 
 print "Set forward - "
