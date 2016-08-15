@@ -179,12 +179,12 @@ class dw_Controller:
         def getMotor(self, num):
                 if (num < 1) or (num > 6):
                         raise NameError('Motors must be between 1 and 6 inclusive')
-                return self.esc[num-1]
+                return self.motors[num-1]
 
         def getServo(self, num):
                 if (num < 1) or (num > 6):
                         raise NameError('Servos must be between 1 and 6 inclusive')
-                return self.servo[num-1]
+                return self.servos[num-1]
 
         def setAllPWM(self, value):
                 if(value > 0):
