@@ -24,17 +24,17 @@ class dw_Motor:
                 self.servo_zero = math.trunc( ( self.servo_min + self.servo_max ) / 2 ) # halfway = 0 degrees
 
                 if (num == 0):
-                         self.pin = 6
+                         self.pin = 0
                 elif (num == 1):
-                         self.pin = 7
+                         self.pin = 1
                 elif (num == 2):
-                         self.pin = 8
+                         self.pin = 2
                 elif (num == 3):
-                         self.pin = 9
+                         self.pin = 3
                 elif (num == 4):
-                         self.pin = 10
+                         self.pin = 4
                 elif (num == 5):
-                         self.pin = 11
+                         self.pin = 5
                 else:
                         raise NameError('Port must be between 1 and 12 inclusive')
 
@@ -93,17 +93,17 @@ class dw_Servo:
                 self.servo_zero = math.trunc( ( self.servo_min + self.servo_max ) / 2 ) # halfway = 0 degrees
 
                 if (num == 0):
-                        self.pin = 0
+                        self.pin = 6
                 elif (num == 1):
-                        self.pin = 1
+                        self.pin = 7
                 elif (num == 2):
-                        self.pin = 2
+                        self.pin = 8
                 elif (num == 3):
-                        self.pin = 3
+                        self.pin = 9
                 elif (num == 4):
-                        self.pin = 4
+                        self.pin = 10
                 elif (num == 5):
-                        self.pin = 5
+                        self.pin = 11
                 else:
                         raise NameError('Motors must be between 1 and 12 inclusive')
 
