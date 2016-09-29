@@ -29,12 +29,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import spidev
 import time
 import sys
-from darkwater_640.mpu9250 import MPU9250
+from darkwater_escape.mpu9250 import MPU9250
 
 imu = MPU9250()
 
 if imu.testConnection():
-    print "Connection established: True"
+    print("Connection established: True")
 else: 
     sys.exit("Connection established: False")
 
@@ -58,8 +58,8 @@ while True:
 
 	m9a, m9g, m9m = imu.getMotion9()
 
-	print "Acc:", "{:+7.3f}".format(m9a[0]), "{:+7.3f}".format(m9a[1]), "{:+7.3f}".format(m9a[2]),
-	print " Gyr:", "{:+8.3f}".format(m9g[0]), "{:+8.3f}".format(m9g[1]), "{:+8.3f}".format(m9g[2]),
-	print " Mag:", "{:+7.3f}".format(m9m[0]), "{:+7.3f}".format(m9m[1]), "{:+7.3f}".format(m9m[2])
+	print("Acc:", "{:+7.3f}".format(m9a[0]), "{:+7.3f}".format(m9a[1]), "{:+7.3f}".format(m9a[2]), end=" ")
+	print(" Gyr:", "{:+8.3f}".format(m9g[0]), "{:+8.3f}".format(m9g[1]), "{:+8.3f}".format(m9g[2]), end=" ")
+	print(" Mag:", "{:+7.3f}".format(m9m[0]), "{:+7.3f}".format(m9m[1]), "{:+7.3f}".format(m9m[2]) )
 
 	time.sleep(0.5)
