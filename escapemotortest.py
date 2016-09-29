@@ -17,64 +17,64 @@ m5.off()
 m6.off()
 time.sleep(1)
 
-print "Set forward - "
-print "Motor 1"
+print("Set forward - ")
+print("Motor 1")
 m1.setMotorSpeed(255)
 time.sleep(1)
-print "Motor 2"
+print("Motor 2")
 m2.setMotorSpeed(255)
 time.sleep(1)
-print "Motor 3"
+print("Motor 3")
 m3.setMotorSpeed(255)
 time.sleep(1)
-print "Motor 4"
+print("Motor 4")
 m4.setMotorSpeed(255)
 time.sleep(1)
-print "Motor 5"
+print("Motor 5")
 m5.setMotorSpeed(255)
 time.sleep(1)
-print "Motor 6"
+print("Motor 6")
 m6.setMotorSpeed(255)
 time.sleep(1)
-print "Stopping - "
-print "Motor 1"
+print("Stopping - ")
+print("Motor 1")
 m1.setMotorSpeed(0)
 time.sleep(1)
-print "Motor 2"
+print("Motor 2")
 m2.setMotorSpeed(0)
 time.sleep(1)
-print "Motor 3"
+print("Motor 3")
 m3.setMotorSpeed(0)
 time.sleep(1)
-print "Motor 4"
+print("Motor 4")
 m4.setMotorSpeed(0)
 time.sleep(1)
-print "Motor 5"
+print("Motor 5")
 m5.setMotorSpeed(0)
 time.sleep(1)
-print "Motor 6"
+print("Motor 6")
 m6.setMotorSpeed(0)
 time.sleep(1)
-print "Set reverse - "
-print "Motor 1"
+print("Set reverse - ")
+print("Motor 1")
 m1.setMotorSpeed(-255)
 time.sleep(1)
-print "Motor 2"
+print("Motor 2")
 m2.setMotorSpeed(-255)
 time.sleep(1)
-print "Motor 3"
+print("Motor 3")
 m3.setMotorSpeed(-255)
 time.sleep(1)
-print "Motor 4"
+print("Motor 4")
 m4.setMotorSpeed(-255)
 time.sleep(1)
-print "Motor 5"
+print("Motor 5")
 m5.setMotorSpeed(-255)
 time.sleep(1)
-print "Motor 6"
+print("Motor 6")
 m6.setMotorSpeed(-255)
 time.sleep(1)
-print "All off"
+print("All off")
 m1.off()
 m2.off()
 m3.off()
