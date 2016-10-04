@@ -63,7 +63,7 @@ class dw_Motor:
 
         def setMotorSpeed(self, value):
                 # Check for PWM values
-                if(value > 1000) and (value < 2000):
+                if(value >= 1000) and (value <= 2000):
                         self.setPWMuS(value)
                 # Translate for motor values
                 if(value > 0) and (value <= 255):
