@@ -1,5 +1,5 @@
 import time
-from darkwater_escape.darkwater_escape import dw_Controller, dw_Servo, dw_Motor
+from darkwater_escape import dw_Controller, dw_Motor
 
 dw = dw_Controller( addr=0x61 )
 m1 = dw.getMotor(1)

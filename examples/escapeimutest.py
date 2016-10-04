@@ -29,7 +29,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import spidev
 import time
 import sys
-from darkwater_escape.mpu9250 import MPU9250
+from darkwater_640 import MPU9250
 
 imu = MPU9250()
 
